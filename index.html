@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mochama EFHUB - eFootball Database</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-logo">⚽ Mochama EFHUB</div>
+        <div class="nav-links">
+            <a href="#players" class="active">Players</a>
+            <a href="#tactics">Tactics Hub</a>
+            <a href="#codes">Promo Codes</a>
+        </div>
+    </nav>
+
+    <!-- LIVE MAINTENANCE COUNTDOWN HEADER -->
+    <div class="maintenance-banner">
+        <div class="banner-content">
+            <span class="pulse-icon">⚡</span>
+            <span id="maintenance-status-text">Next Scheduled Thursday Maintenance Finishes In:</span>
+            <div id="maintenance-timer" class="countdown-timer">00h 00m 00s</div>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <!-- Section: Player Packs & Database -->
+        <section id="players" class="hub-section">
+            <div class="section-header">
+                <h2>📋 Player Database</h2>
+                <input type="text" id="player-search" placeholder="Search players (e.g., Ronaldo, Yamal, Tchouaméni)...">
+            </div>
+            <div id="player-grid" class="player-grid"></div>
+        </section>
+
+        <!-- Section: Tactics Guide -->
+        <section id="tactics" class="hub-section">
+            <div class="section-header">
+                <h2>🛡️ Tactics & Formations</h2>
+            </div>
+            <div class="tactics-container">
+                <div class="tactic-info-card">
+                    <h3>Meta Playstyle Analyzer</h3>
+                    <p>Select a playstyle to view strategic attributes and team behavior profiles:</p>
+                    <div class="tactic-toggles">
+                        <button class="tactic-btn active" onclick="filterPlaystyle('Long Ball Counter')">Long Ball Counter (LBC)</button>
+                        <button class="tactic-btn" onclick="filterPlaystyle('Out Wide')">Out Wide</button>
+                    </div>
+                    <div id="tactic-details" class="tactic-details">
+                        <!-- Loaded dynamically via JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Redeem Codes -->
+        <section id="codes" class="hub-section">
+            <div class="section-header">
+                <h2>🎁 Active Promo & Redeem Codes</h2>
+            </div>
+            <div class="codes-table-container">
+                <table class="codes-table">
+                    <thead>
+                        <tr>
+                            <th>Code</th>
+                            <th>Reward Details</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="codes-list">
+                        <!-- Loaded dynamically via JS -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
